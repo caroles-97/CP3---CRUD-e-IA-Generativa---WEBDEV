@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TWICE · Discografia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════
+       HEADER
+  ════════════════════════ -->
+  <header>
+    <div class="header-logo">
+      <span>TWICE</span>
+      <span class="heart">💗</span>
+      <span class="header-sub">Discografia</span>
+    </div>
+    <div class="header-right">
+      <button id="btn-logout" onclick="logout()">Sair</button>
+    </div>
+  </header>
+
+  <!-- ══════════════════════
+       LOGIN SCREEN
+  ════════════════════════ -->
+  <div id="login-screen" class="screen active">
+    <div class="login-card">
+
+      <!-- Imagem do grupo TWICE -->
+      <div class="login-img-wrap">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/TWICE_-_Fancy_You_Concept_Photo_B.png/1024px-TWICE_-_Fancy_You_Concept_Photo_B.png"
+          alt="Foto do grupo TWICE"
+          class="login-group-img"
+          onerror="this.style.display='none'; document.querySelector('.login-img-fallback').style.display='flex';"
+        />
+        <div class="login-img-fallback" aria-hidden="true">
+          <span class="fallback-icon">🎤</span>
+          <span class="fallback-text">TWICE</span>
+        </div>
+      </div>
+
+      <div class="login-badge">✦ TWICE ✦</div>
+      <h1 class="login-title">Bem-vindo(a) ao<br />arquivo do TWICE 🎵</h1>
+      <p class="login-subtitle">Faça login para acessar e gerenciar as músicas</p>
+
+      <div class="form-group">
+        <label for="input-user">Usuário</label>
+        <input
+          type="text"
+          id="input-user"
+          placeholder="Digite seu usuário"
+          autocomplete="username"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="input-pass">Senha</label>
+        <input
+          type="password"
+          id="input-pass"
+          placeholder="Digite sua senha"
+          autocomplete="current-password"
+        />
+      </div>
+
+      <button class="btn-login" onclick="handleLogin()">Entrar</button>
+
+      <div class="error-msg" id="login-error">
+        ⚠️ <span id="login-error-text"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════
+       LIST SCREEN
+  ════════════════════════ -->
+  <main>
+    <div id="list-screen" class="screen">
+
+      <div class="list-header">
+        <h1>🎤 Discografia TWICE</h1>
+        <p>Gerencie as músicas do grupo — adicione, edite ou remova</p>
+      </div>
+
+      <!-- ADD PANEL -->
+      <div class="add-panel">
+        <h2>♪ Adicionar música</h2>
+        <div class="add-row">
+          <input type="text" id="input-new-song" placeholder="Nome da música..." />
+          <button class="btn-add-start" onclick="addSongStart()">+ Início</button>
+          <button class="btn-add-end" onclick="addSongEnd()">+ Final</button>
+        </div>
+        <div class="add-error" id="add-error">O nome da música não pode ficar vazio.</div>
+      </div>
+
+      <!-- COUNT + LIST -->
+      <div class="song-count" id="song-count"></div>
+      <div id="song-list"></div>
+      <div class="empty-state" id="empty-state">
+        <div class="empty-icon">🎵</div>
+        <p>Nenhuma música cadastrada ainda.<br />Adicione a primeira acima!</p>
+      </div>
+
+      <div class="deco">♡ ♡ ♡</div>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

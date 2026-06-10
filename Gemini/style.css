@@ -1,0 +1,138 @@
+/* Estilos Base e Tema do TWICE (Apricot e Neon Magenta) */
+:root {
+    --primary: #FF5FA2; /* Neon Magenta */
+    --secondary: #FCC89B; /* Apricot */
+    --bg-color: #fdf6f9;
+    --text-color: #333;
+    --error-color: #d9534f;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+h1 {
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+input[type="text"], input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+    border-color: var(--primary);
+}
+
+button {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #e0488d;
+}
+
+button.action-btn {
+    background-color: var(--secondary);
+    color: #333;
+}
+
+button.action-btn:hover {
+    background-color: #e5b082;
+}
+
+button.delete-btn {
+    background-color: var(--error-color);
+}
+
+button.delete-btn:hover {
+    background-color: #c9302c;
+}
+
+.error-msg {
+    color: var(--error-color);
+    font-size: 0.9em;
+    min-height: 20px;
+    margin-bottom: 10px;
+}
+
+/* Container da Imagem do TWICE */
+.image-container {
+    margin-top: 20px;
+}
+
+.image-container img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Área da Lista */
+#app-screen {
+    display: none; /* Oculto inicialmente */
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+    text-align: left;
+}
+
+li {
+    background-color: var(--bg-color);
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 4px solid var(--primary);
+}
+
+.song-name {
+    flex-grow: 1;
+    margin-right: 10px;
+    word-break: break-word;
+}
+
+.controls {
+    display: flex;
+    gap: 5px;
+}
+
+.controls button {
+    padding: 5px 10px;
+    margin: 0;
+    font-size: 0.8em;
+}

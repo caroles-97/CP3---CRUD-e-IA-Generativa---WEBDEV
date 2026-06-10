@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TWICE Song Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="login-screen" class="container">
+        <h1>ONCE Login</h1>
+        <input type="text" id="username" placeholder="Usuário">
+        <input type="password" id="password" placeholder="Senha">
+        <div id="login-error" class="error-msg"></div>
+        <button id="btn-login">Entrar</button>
+        
+        <div class="image-container">
+            <img src="http://googleusercontent.com/image_collection/image_retrieval/17712766962278388665_0" alt="TWICE Group">
+        </div>
+    </div>
+
+    <div id="app-screen" class="container">
+        <h1>Músicas do TWICE</h1>
+        
+        <input type="text" id="song-input" placeholder="Digite o nome da música...">
+        <div id="song-error" class="error-msg"></div>
+        
+        <div>
+            <button id="btn-add-start" class="action-btn">Adicionar ao Início</button>
+            <button id="btn-add-end" class="action-btn">Adicionar ao Final</button>
+        </div>
+
+        <ul id="song-list">
+            </ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

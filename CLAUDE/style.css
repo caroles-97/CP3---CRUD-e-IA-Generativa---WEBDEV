@@ -1,0 +1,609 @@
+/* ════════════════════════════════════
+   RESET & VARIÁVEIS
+════════════════════════════════════ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --pink:    #e91e8c;
+  --pink2:   #ff6eb0;
+  --pink3:   #ffd6eb;
+  --purple:  #9b59b6;
+  --purple2: #c39bd3;
+  --yellow:  #f9ca24;
+  --bg:      #fff0f7;
+  --card:    #ffffff;
+  --text:    #2d2d2d;
+  --muted:   #888;
+  --border:  #f4b8d8;
+  --danger:  #e74c3c;
+  --success: #27ae60;
+  --radius:  14px;
+  --shadow:  0 4px 24px rgba(233, 30, 140, 0.10);
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+/* ════════════════════════════════════
+   HEADER
+════════════════════════════════════ */
+header {
+  background: linear-gradient(135deg, #e91e8c 0%, #9b59b6 100%);
+  color: #fff;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  height: 64px;
+  box-shadow: 0 2px 16px rgba(233, 30, 140, 0.25);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-logo {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header-logo .heart {
+  font-size: 1.1rem;
+}
+
+.header-sub {
+  font-size: 0.78rem;
+  opacity: 0.8;
+  font-weight: 400;
+  margin-left: 4px;
+}
+
+.header-right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+#btn-logout {
+  background: rgba(255, 255, 255, 0.18);
+  border: 1.5px solid rgba(255, 255, 255, 0.45);
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  padding: 6px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: none;
+}
+
+#btn-logout:hover {
+  background: rgba(255, 255, 255, 0.32);
+}
+
+/* ════════════════════════════════════
+   MAIN LAYOUT
+════════════════════════════════════ */
+main {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2.5rem 1rem 4rem;
+}
+
+/* ════════════════════════════════════
+   TELAS (TOGGLE)
+════════════════════════════════════ */
+.screen {
+  display: none;
+}
+
+.screen.active {
+  display: block;
+}
+
+/* ════════════════════════════════════
+   LOGIN SCREEN
+════════════════════════════════════ */
+#login-screen {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 64px);
+  padding: 2rem 1rem;
+}
+
+#login-screen.active {
+  display: flex;
+}
+
+.login-card {
+  background: var(--card);
+  border: 1.5px solid var(--border);
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+  padding: 2.4rem 2.4rem 2.8rem;
+  width: 100%;
+  max-width: 440px;
+  text-align: center;
+}
+
+/* ── Imagem do grupo ── */
+.login-img-wrap {
+  position: relative;
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #ffd6eb, #e8d5f8);
+  aspect-ratio: 16 / 7;
+}
+
+.login-group-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.login-group-img:hover {
+  transform: scale(1.03);
+}
+
+.login-img-fallback {
+  display: none;
+  position: absolute;
+  inset: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #ffd6eb, #e8d5f8);
+}
+
+.fallback-icon {
+  font-size: 3rem;
+}
+
+.fallback-text {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 4px;
+  color: var(--pink);
+}
+
+/* ── Badge e Títulos ── */
+.login-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, #e91e8c, #9b59b6);
+  color: #fff;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: 3px;
+  padding: 8px 24px;
+  border-radius: 30px;
+  margin-bottom: 1.1rem;
+}
+
+.login-title {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 0.3rem;
+  line-height: 1.25;
+}
+
+.login-subtitle {
+  font-size: 0.88rem;
+  color: var(--muted);
+  margin-bottom: 1.6rem;
+}
+
+/* ── Formulário ── */
+.form-group {
+  text-align: left;
+  margin-bottom: 1.1rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--purple);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 6px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: var(--text);
+  background: #fdf5fa;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+.form-group input:focus {
+  border-color: var(--pink);
+  box-shadow: 0 0 0 3px rgba(233, 30, 140, 0.12);
+  background: #fff;
+}
+
+.btn-login {
+  width: 100%;
+  padding: 12px;
+  margin-top: 0.5rem;
+  background: linear-gradient(135deg, var(--pink), var(--purple));
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: opacity 0.2s, transform 0.15s;
+  box-shadow: 0 4px 16px rgba(233, 30, 140, 0.28);
+}
+
+.btn-login:hover {
+  opacity: 0.92;
+  transform: translateY(-1px);
+}
+
+.btn-login:active {
+  transform: translateY(0);
+}
+
+/* ── Mensagem de erro ── */
+.error-msg {
+  background: #fdecea;
+  border: 1.5px solid #f5c6c0;
+  color: var(--danger);
+  font-size: 0.85rem;
+  font-weight: 500;
+  border-radius: 8px;
+  padding: 9px 13px;
+  margin-top: 1rem;
+  text-align: left;
+  display: none;
+}
+
+.error-msg.visible {
+  display: block;
+}
+
+/* ════════════════════════════════════
+   LIST SCREEN
+════════════════════════════════════ */
+#list-screen {
+  padding: 0;
+}
+
+.list-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.list-header h1 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--pink);
+  margin-bottom: 0.2rem;
+}
+
+.list-header p {
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+/* ── Painel de adição ── */
+.add-panel {
+  background: var(--card);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.4rem 1.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.add-panel h2 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--purple);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.add-row {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.add-row input[type="text"] {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: var(--text);
+  background: #fdf5fa;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.add-row input[type="text"]:focus {
+  border-color: var(--pink);
+  box-shadow: 0 0 0 3px rgba(233, 30, 140, 0.11);
+  background: #fff;
+}
+
+.btn-add-end,
+.btn-add-start {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity 0.2s, transform 0.15s;
+  letter-spacing: 0.2px;
+}
+
+.btn-add-end {
+  background: linear-gradient(135deg, var(--pink), var(--purple));
+  color: #fff;
+  box-shadow: 0 3px 10px rgba(233, 30, 140, 0.25);
+}
+
+.btn-add-start {
+  background: #fff;
+  color: var(--purple);
+  border: 1.5px solid var(--purple2);
+}
+
+.btn-add-end:hover,
+.btn-add-start:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+.btn-add-end:active,
+.btn-add-start:active {
+  transform: translateY(0);
+}
+
+.add-error {
+  font-size: 0.81rem;
+  color: var(--danger);
+  font-weight: 500;
+  margin-top: 6px;
+  display: none;
+}
+
+.add-error.visible {
+  display: block;
+}
+
+/* ── Lista de músicas ── */
+.song-count {
+  font-size: 0.82rem;
+  color: var(--muted);
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+  padding-left: 2px;
+}
+
+.song-count strong {
+  color: var(--pink);
+}
+
+#song-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.song-item {
+  background: var(--card);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.9rem 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 2px 8px rgba(233, 30, 140, 0.06);
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.song-item:hover {
+  box-shadow: 0 4px 18px rgba(233, 30, 140, 0.13);
+  border-color: var(--pink2);
+}
+
+.song-index {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--pink2);
+  min-width: 24px;
+  text-align: right;
+  opacity: 0.7;
+}
+
+.song-icon {
+  font-size: 1.15rem;
+  flex-shrink: 0;
+}
+
+.song-name {
+  flex: 1;
+  font-size: 0.97rem;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+/* ── Modo de edição ── */
+.song-item.editing {
+  flex-wrap: wrap;
+}
+
+.song-item.editing .edit-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+}
+
+.edit-input {
+  flex: 1;
+  padding: 6px 10px;
+  border: 1.5px solid var(--pink);
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: var(--text);
+  background: #fff8fd;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(233, 30, 140, 0.10);
+}
+
+.song-actions {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.btn-edit,
+.btn-delete,
+.btn-confirm,
+.btn-cancel {
+  border: none;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 6px 12px;
+  transition: opacity 0.2s, transform 0.1s;
+}
+
+.btn-edit    { background: #f0e8fa; color: var(--purple); }
+.btn-delete  { background: #fdecea; color: var(--danger); }
+.btn-confirm { background: linear-gradient(135deg, #27ae60, #1e8449); color: #fff; }
+.btn-cancel  { background: #f0f0f0; color: var(--muted); }
+
+.btn-edit:hover,
+.btn-delete:hover,
+.btn-confirm:hover,
+.btn-cancel:hover {
+  opacity: 0.8;
+  transform: scale(0.97);
+}
+
+.edit-error {
+  font-size: 0.78rem;
+  color: var(--danger);
+  font-weight: 500;
+  margin-top: 4px;
+  display: none;
+  width: 100%;
+  padding-left: 36px;
+}
+
+.edit-error.visible {
+  display: block;
+}
+
+/* ── Estado vazio ── */
+.empty-state {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--muted);
+  display: none;
+}
+
+.empty-state .empty-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.empty-state p {
+  font-size: 0.9rem;
+}
+
+/* ── Decoração ── */
+.deco {
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 1.1rem;
+  letter-spacing: 8px;
+  opacity: 0.3;
+  user-select: none;
+}
+
+/* ════════════════════════════════════
+   RESPONSIVO
+════════════════════════════════════ */
+@media (max-width: 520px) {
+  .add-row {
+    flex-wrap: wrap;
+  }
+
+  .add-row input[type="text"] {
+    flex: 1 1 100%;
+  }
+
+  .btn-add-start,
+  .btn-add-end {
+    flex: 1;
+  }
+
+  .song-actions {
+    flex-wrap: wrap;
+  }
+
+  .btn-edit,
+  .btn-delete,
+  .btn-confirm,
+  .btn-cancel {
+    flex: 1;
+    text-align: center;
+  }
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TWICE Songs CRUD</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- LOGIN -->
+        <div id="loginPage">
+
+            <h1>Login</h1>
+            
+            <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/TWICE_4th_World_Tour_III.jpg/1280px-TWICE_4th_World_Tour_III.jpg"
+                alt="Grupo TWICE"
+                class="foto-twice">
+
+            <input
+                type="text"
+                id="usuario"
+                placeholder="Usuário">
+
+            <input
+                type="password"
+                id="senha"
+                placeholder="Senha">
+
+            <button
+                class="btn-login"
+                onclick="realizarLogin()">
+                Entrar
+            </button>
+
+            <p id="erroLogin" class="erro"></p>
+
+        </div>
+
+        <!-- CRUD -->
+        <div id="crudPage">
+
+            <h1>Músicas do TWICE</h1>
+
+            <input
+                type="text"
+                id="novaMusica"
+                placeholder="Digite o nome da música">
+
+            <button
+                class="btn-add"
+                onclick="adicionarFinal()">
+                Adicionar no Final
+            </button>
+
+            <button
+                class="btn-start"
+                onclick="adicionarInicio()">
+                Adicionar no Início
+            </button>
+
+            <p id="erroMusica" class="erro"></p>
+
+            <ul id="listaMusicas"></ul>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

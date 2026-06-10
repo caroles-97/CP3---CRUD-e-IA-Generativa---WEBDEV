@@ -18,7 +18,7 @@ Claude
 - NÃO GEROU IMAGEM QUEBRADA, mas não é a foto do grupo. 
 
 -CONTRAS: na TELA DE LOGIN, não tem notificação ao tentar logar sem as credenciais.
-Não estava funcionando o JS para as credenciais
+Não estava funcionando o JS para as credenciais ao copiar e colar o código gerado. Foi necessário baixar a pasta .zip da plataforma do Claude e transferir para esta pasta. 
 
 
 

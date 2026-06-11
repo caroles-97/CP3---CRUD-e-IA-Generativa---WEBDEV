@@ -26,3 +26,6 @@ A lógica deve ser organizada em funções nomeadas — sem código solto fora d
 
 --- 
 
+Gere os arquivos de forma separada em html, css e js 
+
+Coloque uma imagem do grupo TWICE antes das credenciais

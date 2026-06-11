@@ -1,33 +1,26 @@
 Consultada as seguintes IAs: 
 
 ChatGPT: 
-- Colocou todo o HTML, CSS e JS num arquivo único (index.html). Depois, solicitei para dividir o código em HTML, CSS e JS. 
-- Gostei do CSS sugerido
-
--CONTRA: notificações pouco amigáveis
-imagem gerada quebrada
-dificuldade para visualizar o código (cor e tipo da fonte, background do código gerado, identação não favorecem a leitura)
-desalinhamento do botão "Entrar" da página inicial
-
-
+- Arquitetura do Código: Inicialmente, todo o HTML, CSS e JS foram centralizados no index.html. Após a solicitação, o código foi devidamente refatorado e dividido em arquivos separados.
+- Interface e UI/UX: * O CSS sugerido ficou excelente.
+Por outro lado, a legibilidade do código gerado precisa de ajustes urgentes (melhorar a cor/tipo da fonte, o fundo e a indentação).
+Há um desalinhamento visível no botão "Entrar" da página inicial.
+- Experiência do Usuário (UX): As notificações são pouco amigáveis, a imagem gerada está quebrando e o uso de alert para a edição de registros prejudica a fluidez da navegação.
 
 
 Claude
-- Colocou todo o HTML, CSS e JS num arquivo único (index.html)
-
-- NÃO GEROU IMAGEM QUEBRADA, mas não é a foto do grupo. 
-
--CONTRAS: na TELA DE LOGIN, não tem notificação ao tentar logar sem as credenciais.
-Não estava funcionando o JS para as credenciais ao copiar e colar o código gerado. Foi necessário baixar a pasta .zip da plataforma do Claude e transferir para esta pasta. 
-
-
-
+Pontos Positivos:
+-Interface e UX: O design está muito bonito e caprichado, além de apresentar uma funcionalidade excelente e bem mais fluida — a edição direto na linha de registro eliminou o uso de alert, melhorando a experiência.
+- Arquitetura do Código: Inicialmente, todo o HTML, CSS e JS foram centralizados no index.html. Após a solicitação, o código foi devidamente refatorado e dividido em arquivos separados.
+Pontos de Atenção (Contras):
+- Estética: O visual geral ainda parece um tanto artificial e a imagem gerada, embora não esteja quebrada, não corresponde à foto do grupo.
+- Problema Técnico: Ao copiar e colar o código diretamente, o JS das credenciais não funcionou; o problema só foi resolvido baixando o arquivo .zip diretamente da plataforma.
 
 Google Gemini 
-- Colocou todo o HTML, CSS e JS num arquivo único (index.html). Depois, solicitei para dividir o código em HTML, CSS e JS. 
-- Apresentação do código com maior contraste, facilitando a compreensão (background escuro com o código em cores vibrantes).
-- Após o código gerado, o Gemini orientou como usar o código e baixar.
+Pontos Positivos:
+- Organização do Código: A divisão em arquivos estruturados (HTML, CSS e JS) foi realizada com sucesso após o pedido. Além disso, a apresentação com fundo escuro e cores vibrantes trouxe excelente contraste e legibilidade.
+-Suporte e Orientação: O Gemini incluiu instruções claras de como utilizar e baixar o código gerado.
+-Evolução do Front-End: botões padronizados, visual limpo, tons pastéis harmoniosos e um efeito de "foco" bem sutil. As notificações são amigáveis.
 
-- FRONT-END: botões padronizados, visual mais apresentável, "foco" delicado e bonito, notificações amigáveis, tons pastéis combinando com o geral
-
--CONTRAS: imagem gerada quebrada.
+Pontos de Atenção (Contras):
+-Funcionalidade e UI: A imagem gerada apresentou falha (quebrada) e o sistema ainda utiliza a janela de alert para a edição de registros, o que quebra a fluidez da experiência do usuário.
